@@ -16,7 +16,7 @@ export const useFetchData = (category, widget, query) => {
                     loading: false
                 })
             )
-    }, [])
+    }, [category, widget, query])
 
     return state
 }

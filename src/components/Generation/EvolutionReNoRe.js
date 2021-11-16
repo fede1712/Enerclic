@@ -8,20 +8,36 @@ export const EvolutioReNoRe = () => {
 
     const options = {
         series: data.map(elm => elm.values[0].percentage),
-        labels: data.map(elm => elm.type)
+        labels: data.map(elm => elm.type),
+        colors: ['rgba(116, 72, 194, .2)', 'rgba(33, 192, 215, .2)', 'rgba(217, 158, 43, .2)', 'rgba(205, 58, 129, .2)', 'rgba(156, 153, 204, .2)', 'rgba(225, 78, 202, .2)'],
+        stroke: { width: 0.5 },
+        legend: {
+            labels: {
+                colors: ['#000000']
+            }
+        },
+        markers: {
+            size: 0,
+        }
     }
     const series = data.map(elm => elm.values[0].percentage)
+
     return (
         <>
-            {loading === true ?
-                <p>loading</p>
-                :
-                <Chart
-                    options={options}
-                    series={series}
-                    type='donut'
-                    width='500'
-                />
+            <h3 className='d-flex justify-content-center'>Evolución de renovable a no renovable</h3>
+            {
+                loading === true ?
+                    <div className='spinner-border d-flex justify-content-center' role='status'>
+                        <span className='sr-only'>Loading...</span>
+                    </div>
+                    :
+                    <Chart
+                        options={options}
+                        series={series}
+                        type='donut'
+                        width='500'
+                        height='500'
+                    />
             }
         </>
     )
