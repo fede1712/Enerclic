@@ -39,20 +39,22 @@ export const ExchangeBordersProgrammed = () => {
     console.log(series)
 
     return (
-        <>{
-            france.loading === true || portugal.loading === true || morocco.loading == true || andorra.loading === true ?
-                <div className='spinner-border d-flex justify-content-center' role='status'>
-                    <span className='sr-only'>Loading...</span>
-                </div>
-                :
-                <Chart
-                    options={options}
-                    series={series}
-                    type='bar'
-                    width='500'
-                    height='500'
-                />
-        }
+        <>
+            <h3 className='d-flex justify-content-center'>Intercambios programados</h3>
+            {
+                france.loading === true || portugal.loading === true || morocco.loading == true || andorra.loading === true ?
+                    <div className='spinner-border d-flex justify-content-center' role='status'>
+                        <span className='sr-only'>Loading...</span>
+                    </div>
+                    :
+                    <Chart
+                        options={options}
+                        series={series}
+                        type='bar'
+                        width='500'
+                        height='500'
+                    />
+            }
         </>
     )
 }

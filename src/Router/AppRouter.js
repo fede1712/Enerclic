@@ -11,7 +11,6 @@ export const AppRouter = () => {
     return (
 
         <Routes>
-            <Route path='/' element={<Home />} />
             <Route path='/demanda' element={<DemandData />} />
             <Route path='/generacion' element={<GenerationData />} />
             <Route path='/intercambios' element={<ExchangeData />} />
